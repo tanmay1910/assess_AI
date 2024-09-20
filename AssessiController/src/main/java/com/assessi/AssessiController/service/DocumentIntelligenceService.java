@@ -49,7 +49,7 @@ public class DocumentIntelligenceService {
 		        log.info("messagecontent: "+messageContent);
 		        HttpRequest request = HttpRequest.newBuilder()
 		                .uri(URI.create(uri))
-		                .header("Content-Type", "application/json").header("Ocp-Apim-Subscription-Key", "54efbf2ceddc48d08bd363527b14a9ec")
+		                .header("Content-Type", "application/json").header("Ocp-Apim-Subscription-Key", "dummy")
 		                .POST(HttpRequest.BodyPublishers.ofString(messageContent))
 		                .build();
 		        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -64,7 +64,7 @@ public class DocumentIntelligenceService {
 			 log.debug("DocIntellPostRequest.getJson: Entering method.");
 		        HttpClient client = HttpClient.newBuilder().build();
 		        HttpRequest request = HttpRequest.newBuilder()
-		                .uri(URI.create(arg)).header("Ocp-Apim-Subscription-Key", "54efbf2ceddc48d08bd363527b14a9ec")
+		                .uri(URI.create(arg)).header("Ocp-Apim-Subscription-Key", "dummy")
 		                .build();
 		        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 		        log.info("Response ->\n" + response.body());
